@@ -87,7 +87,8 @@ html {
 }
 
 .navbar-logo:hover::after,
-.navbar-logo:focus-visible::after {
+.navbar-logo:focus-visible::after,
+.navbar-logo:active::after {
   transform: scaleX(1);
 }
 
@@ -316,6 +317,21 @@ section {
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
+.design-interesting-tools-box .hotlink-grid a.hotlink-button {
+  text-decoration: none !important;
+  color: #0f172a !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%) !important;
+  border: 1px solid rgba(31, 41, 55, 0.25) !important;
+}
+
+.design-interesting-tools-box .hotlink-grid a.hotlink-button span {
+  color: inherit;
+}
+
+.design-interesting-tools-box .hotlink-grid a.hotlink-button > span {
+  color: inherit;
+}
+
 .hotlink-button:hover {
   transform: translateY(-2px);
   border-color: rgba(37, 99, 235, 0.4);
@@ -332,6 +348,13 @@ section {
   height: 16px;
   border-radius: 2px;
   flex-shrink: 0;
+}
+
+@media (hover: none) {
+  .navbar-logo::after {
+    transform: scaleX(1);
+    opacity: 0.45;
+  }
 }
 
 .personal-grid {
