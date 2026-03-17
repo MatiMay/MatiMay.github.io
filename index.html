@@ -4,27 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <nav class="navbar">
+      <span class="navbar-logo">Matias Mayans</span>
+      <ul class="navbar-links">
+        <li><a href="#top">Home</a></li>
+        <li><a href="tech.html">Tech</a></li>
+        <li><a href="design.html">Design</a></li>
+        <li><a href="personal.html">Personal</a></li>
+      </ul>
+    </nav>
+
+    <div class="video-hero" id="top">
+      <video
+        src="Source/Matias Mayans white.mp4"
+        loop
+        autoplay
+        muted
+        playsinline
+        onloadedmetadata="this.playbackRate=0.85"
+      ></video>
+    </div>
+
     <header class="site-header">
-      <h1>Page Title</h1>
-      <p>Start editing this template to build your page.</p>
+      <h1>Bienvenidos a mi página</h1>
+      <p>Acá van a poder ver mis proyectos en tecnología, diseño y cosas personales.</p>
     </header>
 
     <main class="container">
-      <section>
-        <h2>Section Heading</h2>
-        <p>
-          This is a basic HTML + CSS starter template. Replace this content with
-          your own.
-        </p>
-        <button type="button">Primary Action</button>
-      </section>
+      <div class="category-grid">
+        <a class="category-card" href="tech.html">
+          <h3>Tech</h3>
+          <p>GitHub projects, code experiments, and software work.</p>
+        </a>
+
+        <a class="category-card" href="design.html">
+          <h3>Design</h3>
+          <p>Figma workflow, visual direction, and UI tools.</p>
+        </a>
+
+        <a class="category-card" href="personal.html">
+          <h3>Personal</h3>
+          <p>Who I am, what I like building, and my interests.</p>
+        </a>
+      </div>
     </main>
 
     <footer class="site-footer">
-      <small>© 2026 Your Name</small>
+      <small>Matias Mayans Kohon</small>
     </footer>
   </body>
 </html>
