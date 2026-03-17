@@ -67,6 +67,28 @@ html {
   font-size: 1.1rem;
   color: #111;
   letter-spacing: 0.03em;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.2rem;
+}
+
+.navbar-logo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.navbar-logo:hover::after,
+.navbar-logo:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .navbar-links {
@@ -84,10 +106,31 @@ html {
   letter-spacing: 0.03em;
   opacity: 0.9;
   transition: opacity 0.2s;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.2rem;
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
 }
 
 .navbar-links a:hover {
   opacity: 1;
+}
+
+.navbar-links a:hover::after,
+.navbar-links a:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .site-header,
@@ -232,6 +275,63 @@ section {
 
 .page-main section {
   margin-bottom: 1rem;
+}
+
+.design-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.design-projects-box,
+.design-tools-box {
+  height: 100%;
+}
+
+.design-interesting-tools-box {
+  grid-column: 1 / -1;
+}
+
+.hotlink-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.hotlink-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.1rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid rgba(31, 41, 55, 0.25);
+  border-radius: 999px;
+  text-decoration: none;
+  color: #0f172a;
+  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.2;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.hotlink-button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.12);
+}
+
+.hotlink-button:focus-visible {
+  outline: 2px solid rgba(37, 99, 235, 0.45);
+  outline-offset: 2px;
+}
+
+.hotlink-button img {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  flex-shrink: 0;
 }
 
 .personal-grid {
@@ -470,6 +570,14 @@ section {
 @media (max-width: 900px) {
   .category-grid {
     grid-template-columns: 1fr;
+  }
+
+  .design-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .design-interesting-tools-box {
+    grid-column: auto;
   }
 
   .personal-grid {
